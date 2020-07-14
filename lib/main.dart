@@ -8,39 +8,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int number = 0;
-
-  void tambahTombol() {
-    setState(() {
-      number = number + 1;
-    });
-  }
-
-  void resetTombol() {
-    setState(() {
-      number = 0;
-    });
-  }
+  String message = "Ini mungkin Text";
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Latihan Stateless & Stateful Widget"),
+          title: Text("Anonymous Method"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                number.toString(),
-                style: TextStyle(fontSize: 15 + number.toDouble()),
-              ),
+              Text(message),
               RaisedButton(
-                  child: Text("Tambah Bilangan"), onPressed: tambahTombol),
-              RaisedButton(
-                  child: Text("Ulang Bilangan"), onPressed: resetTombol)
+                child: Text("Tekan ini"),
+                onPressed: () {
+                  setState(() {
+                    message = "Tombol sudah ditekan";
+                  });
+                },
+              )
             ],
           ),
         ),
