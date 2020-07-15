@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,29 +10,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String message = "Ini mungkin Text";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Anonymous Method"),
+          title: Text("Latihan TextStyle"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(message),
-              RaisedButton(
-                child: Text("Tekan ini"),
-                onPressed: () {
-                  setState(() {
-                    message = "Tombol sudah ditekan";
-                  });
-                },
-              )
-            ],
+          child: Text(
+            "Ini sebenernya Text",
+            style: TextStyle(
+                fontFamily: "Ubuntu",
+                fontStyle: FontStyle.italic,
+                fontSize: 30,
+                decoration: TextDecoration.overline,
+                decorationColor: Colors.amber,
+                decorationThickness: 5,
+                decorationStyle: TextDecorationStyle.wavy),
           ),
         ),
       ),

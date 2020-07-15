@@ -1,0 +1,29 @@
+[33mcommit b387cbedeafa5ed796c43f04a34c95350a2919c9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Daniel Simanjuntak <daniel.smnjuntak@gmail.com>
+Date:   Wed Jul 15 00:35:08 2020 +0700
+
+    TextStyle
+
+[33mcommit 8e704249dafa37d56443b30f52a8532b773f75bd[m
+Author: Daniel Simanjuntak <daniel.smnjuntak@gmail.com>
+Date:   Wed Jul 15 00:11:18 2020 +0700
+
+    Stateless & Stateful Widget
+
+[33mcommit e1cefbf6f6f257adbf63f0c5ad7e7213c4c91c2d[m
+Author: Daniel Simanjuntak <daniel.smnjuntak@gmail.com>
+Date:   Tue Jul 14 23:28:11 2020 +0700
+
+    Container
+
+[33mcommit 5663bd8a2d7cfec1b40744d49685b86b5b074478[m
+Author: Daniel Simanjuntak <daniel.smnjuntak@gmail.com>
+Date:   Tue Jul 14 22:59:31 2020 +0700
+
+    mainAxisAlignment & crossAxisAlignment, Row & Column
+
+[33mcommit e673290375133c4ede51a11806a19c333f7af4ca[m
+Author: Daniel Simanjuntak <daniel.smnjuntak@gmail.com>
+Date:   Tue Jul 14 22:50:32 2020 +0700
+
+    first commit
