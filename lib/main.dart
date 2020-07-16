@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -10,25 +8,45 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int counter = 1;
+  List<Widget> widgets = [];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Latihan TextStyle"),
+          title: Text("Latihan ListView"),
         ),
-        body: Center(
-          child: Text(
-            "Ini sebenernya Text",
-            style: TextStyle(
-                fontFamily: "Ubuntu",
-                fontStyle: FontStyle.italic,
-                fontSize: 30,
-                decoration: TextDecoration.overline,
-                decorationColor: Colors.amber,
-                decorationThickness: 5,
-                decorationStyle: TextDecorationStyle.wavy),
-          ),
+        body: ListView(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                RaisedButton(
+                    child: Text("Tambah Data"),
+                    onPressed: () {
+                      setState(() {
+                        widgets.add(Text(
+                          "Data ke-" + counter.toString(),
+                          style: TextStyle(fontSize: 35),
+                        ));
+                        counter++;
+                      });
+                    }),
+                RaisedButton(child: Text("Hapus Data"), onPressed: (){
+                  setState(() {
+                    widgets.removeLast();
+                    counter--;
+                  });
+                })
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widgets,
+            )
+          ],
         ),
       ),
     );
