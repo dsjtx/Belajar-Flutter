@@ -6,38 +6,53 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainPage(),
-    );
-  }
-}
-
-class MainPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Latihan Media Query")),
-      body: (MediaQuery.of(context).orientation == Orientation.portrait) ? 
-      Column(
-        children: generateContainer(),
-      ) : 
-      Row(
-        children: generateContainer(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Latihan Inkwell (Button Gradasi"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              RaisedButton(
+                  color: Colors.amber,
+                  child: Text("Raised Button"),
+                  shape: StadiumBorder(),
+                  onPressed: () {}),
+              Material(
+                borderRadius: BorderRadius.circular(20),
+                elevation: 5,
+                child: Container(
+                  width: 150,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          colors: [Colors.purple, Colors.pink],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Colors.amber,
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: () {},
+                      child: Center(
+                        child: Text(
+                          "My Button",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w200),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      // body: Container(
-      //   color: Colors.red,
-      //   width: MediaQuery.of(context).size.width / 3,
-      //   height: MediaQuery.of(context).size.height / 2,
-      // ),
     );
-  }
-
-  // (syarat) ? kalau bener : kalau salah
-
-  List<Widget> generateContainer() {
-    return <Widget>[
-        Container(color: Colors.red, width: 100, height: 100,),
-        Container(color: Colors.green, width: 100, height: 100,),
-        Container(color: Colors.blue, width: 100, height: 100,),
-      ];
   }
 }
