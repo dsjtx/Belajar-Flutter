@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:hello_world/ColorfulButton.dart';
 
 // void main() => runApp(MyApp());
 void main() => runApp(MyApp());
@@ -10,15 +10,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+              "Latihan Membuat Button Belah Ketupat Warna Warni (Transform)"),
+        ),
         body: Center(
-          child: QrImage(
-            version: 6,
-            // backgroundColor: Colors.grey,
-            foregroundColor: Colors.black,
-            errorCorrectionLevel: QrErrorCorrectLevel.M,
-            padding: EdgeInsets.all(20),
-            size: 300,
-            data: "https://www.instagram.com/daniel_smnjuntak/"),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              ColorfulButton(Colors.pink, Colors.blue, Icons.adb),
+              ColorfulButton(Colors.amber, Colors.red, Icons.comment),
+              ColorfulButton(Colors.green, Colors.purple, Icons.computer),
+              ColorfulButton(Colors.blue, Colors.yellow, Icons.contact_phone),
+            ],
+          ),
         ),
       ),
     );
