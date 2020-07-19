@@ -13,27 +13,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(200),
-          child: AppBar(
-            backgroundColor: Colors.amber,
-            flexibleSpace: Positioned(
-              bottom: 0,
-              right: 0,
-              child: Container(
-                margin: EdgeInsets.all(20),
-                child: Text(
-                  "Appbar with Custom Height",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("Latihan TabBar"),
+            bottom: TabBar(tabs: <Widget>[
+              Tab(
+                icon: Icon(Icons.comment),
+                text: "Comments",
+              ),
+              Tab(
+                child: Image(
+                  image: AssetImage("assets/facebook.png"),
                 ),
               ),
-            ),
+              Tab(
+                icon: Icon(Icons.computer),
+              ),
+              Tab(
+                text: "News",
+              )
+            ]),
           ),
+          body: TabBarView(children: <Widget>[
+            Center(
+              child: Text("Tab 1"),
+            ),
+            Center(
+              child: Text("Tab 2"),
+            ),
+            Center(
+              child: Text("Tab 3"),
+            ),
+            Center(
+              child: Text("Tab 4"),
+            ),
+          ]),
         ),
       ),
     );
