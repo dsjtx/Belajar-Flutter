@@ -44,7 +44,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/corak.png
+    - assets/facebook.png
+    - assets/twitter.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -59,11 +60,11 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-      - family: Ubuntu
+      - family: Carolina
         fonts:
-          - asset: fonts/Ubuntu-Regular.ttf
-          - asset: fonts/Ubuntu-Italic.ttf
-            style: italic
+          - asset: fonts/Carolina-Regular.ttf
+          # - asset: fonts/Ubuntu-Italic.ttf
+            # style: italic
     # - family: Ubuntu
     #   fonts:
     #     -asset: fonts/Ubuntu-Regular.ttf
