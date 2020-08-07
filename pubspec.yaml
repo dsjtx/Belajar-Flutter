@@ -30,7 +30,8 @@ dependencies:
   qr_flutter: ^2.1.0+55
 
   audioplayers: ^0.13.0
-
+  characters: ^1.0.0
+  stagehand: ^3.3.9
   http: ^0.12.0+2
 
 dev_dependencies:
